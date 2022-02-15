@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "f06e1212-7540-4de4-a189-ea778809075b",
+		"name": "test-rest-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "crearExamen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"codigo\": \"EX001\",\r\n    \"preguntas\": \r\n        [\r\n            {\r\n            \"descripcion\":\"pregunta 1\",\r\n            \"puntaje\": 20.0,\r\n             \"opciones\": [\r\n                 {\r\n                     \"descripcion\":\"opcion 1\",\r\n                     \"codigo\":\"A\",\r\n                     \"opcionCorrecta\":true\r\n                 \r\n                 },\r\n                 {\r\n                    \"descripcion\":\"opcion 2\",\r\n                    \"codigo\":\"B\",\r\n                     \"opcionCorrecta\":false \r\n                 },\r\n\r\n                 {\r\n                    \"descripcion\":\"opcion 3\",\r\n                    \"codigo\":\"C\",\r\n                    \"opcionCorrecta\":false \r\n                 },\r\n\r\n                 {\r\n                    \"descripcion\":\"opcion 4\",\r\n                    \"codigo\":\"D\",\r\n                    \"opcionCorrecta\":false \r\n                 }\r\n             ]\r\n            }\r\n        ]\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/crearExamen",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crearExamen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crearEstudiante",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"naruto\",\r\n    \"edad\": 17,\r\n    \"ciudad\": \"Hong_Kong\",\r\n    \"zonaHoraria\": \"Asia/Hong_Kong\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/crearEstudiante",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crearEstudiante"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegistroExamen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fechaExamen\": \"2022-02-14 10:21:00\",\r\n    \"estudiante\":{\r\n        \"id\": 1\r\n    },\r\n    \"examen\": {\r\n      \"idExamen\":1\r\n    }\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/registroExamen",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"registroExamen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "responderExamen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"asignacionExamen\":\r\n    {\r\n        \"id\":1, \r\n        \"estudiante\":{\r\n        \"id\": 1\r\n    },\r\n    \"examen\": {\r\n      \"idExamen\":1\r\n    }\r\n    },\r\n    \"respuestas\":\r\n    [\r\n        {\r\n            \"pregunta\":\r\n            {\r\n                \"idPregunta\": 1\r\n            },\r\n            \"opcion\": \r\n            { \r\n                \"idOpcion\":1\r\n            }\r\n        },\r\n        {\r\n            \"pregunta\":\r\n            {\r\n                \"idPregunta\": 2\r\n            },\r\n            \"opcion\": \r\n            { \r\n                \"idOpcion\": 2\r\n            }\r\n        }\r\n    ]\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/registroRespuestas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"registroRespuestas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
